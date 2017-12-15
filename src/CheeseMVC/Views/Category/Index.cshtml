@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+@using CheeseMVC.Models
+@model List<CheeseCategory>
+
+<h2>Index of cheese types</h2>
+
+@foreach (CheeseCategory category in Model)
+{
+    <ul>@category.Name</ul>
+}
+
+<p><a asp-controller="Category" asp-action="Add">Add Category</a></p>
