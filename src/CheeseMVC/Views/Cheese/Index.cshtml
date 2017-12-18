@@ -1,5 +1,11 @@
 ﻿@model List<CheeseMVC.Models.Cheese>
 
+<style>
+    .field-validation-error {
+        color: red;
+    }
+</style>
+
 <h1>@ViewBag.Title</h1>
 
 <table class="table">
@@ -7,7 +13,7 @@
     <tr>
         <th>Name</th>
         <th>Description</th>
-        <td>Type</td>
+        <td>Category</td>
     </tr>
 
     @foreach (var cheese in Model)
@@ -15,9 +21,10 @@
         <tr>
             <td>@cheese.Name</td>
             <td>@cheese.Description</td>
-            <td>@cheese.Type</td>
+            <td>@cheese.Category.Name</td>
         </tr>
     }
+
 </table>
 
 @if (Model.Count == 0)
