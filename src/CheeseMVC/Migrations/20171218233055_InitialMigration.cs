@@ -43,7 +43,8 @@ namespace CheeseMVC.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CategoryID = table.Column<int>(nullable: false),
                     Description = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: true),
+                    Rating = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

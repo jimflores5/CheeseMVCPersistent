@@ -31,6 +31,8 @@ namespace CheeseMVC.Migrations
 
                     b.Property<string>("Name");
 
+                    b.Property<int>("Rating");
+
                     b.HasKey("ID");
 
                     b.HasIndex("CategoryID");

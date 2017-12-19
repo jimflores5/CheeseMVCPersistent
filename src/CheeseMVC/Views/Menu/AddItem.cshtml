@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Add Cheese to " + Model.Menu.Name;
+}
+@model CheeseMVC.ViewModels.AddMenuItemViewModel
+
+<style>
+    .field-validation-error {
+        color: red;
+    }
+</style>
+
+<h2>Add Cheese to @Model.Menu.Name</h2>
+
+<form asp-controller="Menu" asp-action="AddItem" method="post">
+    <div class="form-group">
+        <label asp-for="cheeseID">Select cheese</label>
+        <select asp-for="cheeseID" asp-items="Model.Cheeses"></select>
+        <span asp-validation-for="cheeseID"></span>
+    </div>
+
+    <input type="submit" value="Add to menu" />
+    <input type="hidden" name="MenuID" value="@Model.Menu.ID" />
+
+</form>
+

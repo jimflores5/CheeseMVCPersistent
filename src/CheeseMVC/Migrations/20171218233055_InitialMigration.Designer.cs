@@ -11,8 +11,8 @@ using System;
 namespace CheeseMVC.Migrations
 {
     [DbContext(typeof(CheeseDbContext))]
-    [Migration("20171218175133_AddCategory")]
-    partial class AddCategory
+    [Migration("20171218233055_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,6 +31,8 @@ namespace CheeseMVC.Migrations
                     b.Property<string>("Description");
 
                     b.Property<string>("Name");
+
+                    b.Property<int>("Rating");
 
                     b.HasKey("ID");
 
