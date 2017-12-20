@@ -1,0 +1,44 @@
+﻿@model CheeseMVC.ViewModels.EditCheeseViewModel
+@{
+    ViewData["Title"] = "Edit Cheese";
+}
+
+<h2>Edit @Model.Name (ID=@Model.CheeseId).</h2>
+
+<style>
+    .field-validation-error {
+        color: red;
+    }
+</style>
+
+<form asp-controller="Cheese" asp-action="Edit" method="post">
+
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input class="form-control" asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input class="form-control" asp-for="Description" />
+        <span asp-validation-for="Description"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CategoryID"></label>
+        <select asp-for="CategoryID" asp-items="Model.Categories"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Rating">Please rank the cheese (1-5):</label>
+        <input class="form-control" asp-for="Rating" style="width:75px" />
+        <span asp-validation-for="Rating"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="hidden" value="@Model.CheeseId" name="id" />
+    </div>
+
+    <input type="submit" value="Edit Cheese" />
+
+</form>
